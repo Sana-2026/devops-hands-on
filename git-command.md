@@ -71,7 +71,79 @@ git diff
 What it does: Shows differences between working directory and staging area.
 Example:
 
+git diff
 
+git branch
+
+Shows all local branches and highlights the current one.
+
+git branch branch-name
+
+Creates a new branch.
+
+Example:
+
+git branch feature-login
+
+git checkout branch-name
+
+Switches to an existing branch.
+
+Example:
+
+git checkout feature-login
+
+git checkout -b branch-name
+
+Creates a new branch and switches to it.
+
+Example:
+
+git checkout -b fix-bug
+
+git switch branch-name
+
+Switches to a branch (modern and simpler command).
+
+Example:
+
+git switch main
+
+git switch -c branch-name
+
+Creates a new branch and switches to it (modern way).
+
+Example:
+
+git switch -c new-feature
+
+git branch -d branch-name
+
+Deletes a branch after it is merged.
+
+Example:
+
+git branch -d feature-login
+
+git branch -D branch-name
+
+Force deletes a branch (even if not merged).
+
+Example:
+
+git branch -D temp-branch
+
+git merge branch-name
+
+Merges a branch into the current branch.
+
+Example:
+
+git merge feature-login
+
+git log --oneline --graph
+
+Shows branch history in a visual graph format.
 ~
 ~
 ~
