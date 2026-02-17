@@ -71,7 +71,7 @@ git diff
 What it does: Shows differences between working directory and staging area.
 Example:
 
-git diff
+
 ~
 ~
 ~
