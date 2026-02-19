@@ -1,4 +1,5 @@
-Setup & Config
+## Setup & Config
+
 git config --global user.name
 
 What it does: Sets your name for all Git commits on this system.
