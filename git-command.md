@@ -1,20 +1,20 @@
 ## Setup & Config
 
-git config --global user.name
+### 1. git config --global user.name
 
-What it does: Sets your name for all Git commits on this system.
-Example:
+- What it does: Sets your name for all Git commits on this system.
+  Example:
 
-git config --global user.name "sana"
+  git config --global user.name "sana"
 
-git config --global user.email
+### 2. git config --global user.email
 
-What it does: Sets your email for all Git commits on this system.
-Example:
+- What it does: Sets your email for all Git commits on this system.
+- Example:
 
-git config --global user.email "youremail@gmail.com"
+  git config --global user.email "youremail@gmail.com"
 
-git config --global --list
+### 3. git config --global --list
 
 What it does: Shows all global Git configuration settings.
 Example:
