@@ -12,7 +12,7 @@ git config --global user.email
 What it does: Sets your email for all Git commits on this system.
 Example:
 
-git config --global user.email "aqibkhan@gmail.com"
+git config --global user.email "youremail@gmail.com"
 
 git config --global --list
 
