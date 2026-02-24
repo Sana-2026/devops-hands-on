@@ -1,150 +1,209 @@
-## Setup & Config
+# 📘 Git Commands Reference (Days 22–25)
 
-### 1. git config --global user.name
+This document covers **core Git commands** learned from Days **22 to 25**, organized by category for quick reference and revision.
 
-- What it does: Sets your name for all Git commits on this system.
-  Example:
+---
 
-  git config --global user.name "sana"
+## 1️⃣ Setup & Configuration
 
-### 2. git config --global user.email
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@email.com"
+git config --list
 
-- What it does: Sets your email for all Git commits on this system.
-- Example:
+Purpose
 
-  git config --global user.email "youremail@gmail.com"
+Configure Git identity
 
-### 3. git config --global --list
+Verify current Git settings
 
-What it does: Shows all global Git configuration settings.
-Example:
-
-git config --global --list
- Basic Workflow
-git init
-
-What it does: Creates a new Git repository in the current folder.
-Example:
-
-git init
-
+2️⃣ Basic Workflow
 git status
-
-What it does: Shows the current state of files (modified, staged, untracked).
-Example:
-
-git status
-
-git add
-
-What it does: Adds file changes to the staging area.
-Example:
-
-git add file.txt
-
-
-Add everything:
-
+git add <file>
 git add .
-
-git commit
-
-What it does: Saves staged changes as a snapshot in the repository.
-Example:
-
-git commit -m "Initial commit"
-
-👀 Viewing Changes
+git commit -m "commit message"
 git log
-
-What it does: Shows the history of commits.
-Example:
-
-git log
-
-
-Short version:
-
 git log --oneline
-
+git log --oneline -4
 git diff
+git diff --staged
 
-What it does: Shows differences between working directory and staging area.
-Example:
+Purpose
 
-git diff
+Track file status
 
+Stage changes
+
+Commit snapshots
+
+View history
+
+Inspect changes
+
+3️⃣ Branching
 git branch
+git branch <branch-name>
+git switch <branch-name>
+git switch -c <new-branch>
+git checkout <branch-name>
+git branch -d <branch-name>
+git branch -D <branch-name>
 
-Shows all local branches and highlights the current one.
+Purpose
 
-git branch branch-name
+Create and manage branches
 
-Creates a new branch.
+Switch between branches
 
-Example:
+Delete merged/unmerged branches
 
-git branch feature-login
+4️⃣ Remote Operations
+git clone <repo-url>
+git remote -v
+git fetch
+git pull
+git push
+git push -u origin <branch>
+Fork Workflow (Concept)
 
-git checkout branch-name
+Fork repo on GitHub
 
-Switches to an existing branch.
+Clone your fork
 
-Example:
+Add upstream remote
 
-git checkout feature-login
+git remote add upstream <original-repo-url>
+git fetch upstream
+git merge upstream/main
 
-git checkout -b branch-name
+Purpose
 
-Creates a new branch and switches to it.
+Sync with remote repositories
 
-Example:
+Collaborate safely using forks
 
-git checkout -b fix-bug
+5️⃣ Merging & Rebasing
+Merge
+git merge <branch-name>
+git merge --squash <branch-name>
 
-git switch branch-name
+Combines branches
 
-Switches to a branch (modern and simpler command).
+May create merge commit
 
-Example:
+Rebase
+git rebase <branch-name>
+git rebase -i HEAD~3
 
-git switch main
+Replays commits on top of another branch
 
-git switch -c branch-name
+Rewrites history (local only)
 
-Creates a new branch and switches to it (modern way).
+6️⃣ Stash & Cherry-Pick
+Stash
+git stash
+git stash list
+git stash apply
+git stash pop
+git stash drop
 
-Example:
+Use
 
-git switch -c new-feature
+Temporarily save uncommitted changes
 
-git branch -d branch-name
+Cherry-Pick
+git cherry-pick <commit-hash>
 
-Deletes a branch after it is merged.
+Use
 
-Example:
+Apply a specific commit from another branch
 
-git branch -d feature-login
+7️⃣ Reset & Revert
+Reset (Local History Rewrite)
+git reset --soft HEAD~1
+git reset --mixed HEAD~1
+git reset --hard HEAD~1
+Mode	What Happens
+--soft	Removes commit, keeps changes staged
+--mixed	Removes commit, unstages changes
+--hard	Removes commit and discards changes
 
-git branch -D branch-name
+⚠️ Do not use reset on pushed commits
 
-Force deletes a branch (even if not merged).
+Revert (Safe Undo)
+git revert <commit-hash>
+git revert --continue
+git revert --abort
 
-Example:
+Purpose
 
-git branch -D temp-branch
+Safely undo a commit by creating a new commit
 
-git merge branch-name
+Recommended for shared branches
 
-Merges a branch into the current branch.
+🔑 Golden Rules
 
-Example:
+Local mistake → reset
 
-git merge feature-login
+Pushed/shared mistake → revert
 
-git log --oneline --graph
+Feature work → branch
 
-Shows branch history in a visual graph format.
+Cleanup before push → rebase
+
+Emergency fix → hotfix / cherry-pick
+
+🧠 One-Line Memory
+
+Reset rewrites history, Revert preserves history
+
+
+
+
+
+# 📘 Git Commands Reference (Days 22–25) — Table Format
+
+| Category | Command | Description | When to Use | Example |
+|--------|--------|-------------|------------|---------|
+| **Setup & Config** | `git config --global user.name` | Set Git username | First-time setup | `git config --global user.name "Sana"` |
+| | `git config --global user.email` | Set Git email | First-time setup | `git config --global user.email "sana@mail.com"` |
+| | `git config --list` | View config | Verify settings | `git config --list` |
+| **Basic Workflow** | `git status` | Show repo status | Before/after changes | `git status` |
+| | `git add <file>` | Stage a file | Before commit | `git add file.txt` |
+| | `git add .` | Stage all changes | Multiple files | `git add .` |
+| | `git commit -m` | Save snapshot | After staging | `git commit -m "Add feature"` |
+| | `git log --oneline` | View commit history | Quick history view | `git log --oneline` |
+| | `git diff` | View unstaged changes | Review edits | `git diff` |
+| | `git diff --staged` | View staged changes | Before commit | `git diff --staged` |
+| **Branching** | `git branch` | List branches | Check branches | `git branch` |
+| | `git branch <name>` | Create branch | New feature | `git branch feature-1` |
+| | `git switch <name>` | Switch branch | Change context | `git switch main` |
+| | `git switch -c <name>` | Create + switch | Start work | `git switch -c login` |
+| | `git branch -d <name>` | Delete branch | After merge | `git branch -d login` |
+| **Remote** | `git clone` | Copy remote repo | Start project | `git clone repo-url` |
+| | `git remote -v` | View remotes | Check origin | `git remote -v` |
+| | `git fetch` | Download changes | Sync without merge | `git fetch origin` |
+| | `git pull` | Fetch + merge | Update branch | `git pull origin main` |
+| | `git push` | Upload commits | Share work | `git push origin main` |
+| **Merging & Rebasing** | `git merge <branch>` | Combine branches | Integrate work | `git merge feature-1` |
+| | `git merge --squash` | Squash commits | Clean history | `git merge --squash feature-1` |
+| | `git rebase <branch>` | Replay commits | Linear history | `git rebase main` |
+| | `git rebase -i` | Edit commits | Cleanup before push | `git rebase -i HEAD~3` |
+| **Stash** | `git stash` | Save work temporarily | Switch tasks | `git stash` |
+| | `git stash list` | View stashes | Manage stashes | `git stash list` |
+| | `git stash pop` | Apply + delete stash | Resume work | `git stash pop` |
+| **Cherry-Pick** | `git cherry-pick <hash>` | Apply specific commit | Hotfix | `git cherry-pick a1b2c3` |
+| **Reset** | `git reset --soft` | Undo commit, keep staged | Edit commit | `git reset --soft HEAD~1` |
+| | `git reset --mixed` | Undo commit, unstage | Re-stage changes | `git reset --mixed HEAD~1` |
+| | `git reset --hard` | Delete commit + changes | Discard work ⚠️ | `git reset --hard HEAD~1` |
+| **Revert** | `git revert <hash>` | Safe undo commit | Shared branch | `git revert a1b2c3` |
+| | `git revert --continue` | Finish revert | After conflict | `git revert --continue` |
+| | `git revert --abort` | Cancel revert | Abort operation | `git revert --abort` |
+
+---
+
+
+
 ~
 ~
 ~
@@ -172,6 +231,5 @@ Shows branch history in a visual graph format.
 ~
 ~
 ~
-git-command.md [unix] (02:09 18/02/2026)                                                        0,1 All
--- INSERT --
+
 
