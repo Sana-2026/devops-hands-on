@@ -97,5 +97,31 @@ Revert (Safe Undo)
 | `git revert --abort`       | Cancel an ongoing revert operation.                | `git revert --abort`    |
 
 
+## 📘 GitHub CLI (gh) Commands Referenc
+
+
+| Category            | Command | Description | Example |
+|---------------------|---------|-------------|---------|
+| Authentication | `gh auth login` | Log in to GitHub via browser or device flow | `gh auth login` |
+| Authentication | `gh auth status` | Check current login and token scopes | `gh auth status` |
+| Authentication | `gh auth logout` | Log out from GitHub CLI | `gh auth logout` |
+| Authentication | `gh auth refresh -h github.com -s delete_repo` | Refresh token and add required scope | `gh auth refresh -h github.com -s delete_repo` |
+| Repository | `gh repo create` | Create a new GitHub repository | `gh repo create my-repo` |
+| Repository | `gh repo view` | View repo details | `gh repo view` |
+| Repository | `gh repo clone` | Clone a GitHub repository | `gh repo clone user/repo` |
+| Repository | `gh repo list` | List repositories for a user/org | `gh repo list Sana-2026` |
+| Repository | `gh repo delete` | Delete a repository (owner/admin only) | `gh repo delete user/repo --yes` |
+| Issues | `gh issue create` | Create a new issue | `gh issue create --title "Bug" --body "Fix login" --label bug` |
+| Issues | `gh issue list` | List issues in a repository | `gh issue list` |
+| Issues | `gh issue view` | View an issue | `gh issue view 12` |
+| Issues | `gh issue close` | Close an issue | `gh issue close 12` |
+| Pull Requests | `gh pr create` | Create a pull request | `gh pr create --base main --head feature-1` |
+| Pull Requests | `gh pr list` | List pull requests | `gh pr list` |
+| Pull Requests | `gh pr view` | View PR details | `gh pr view 5` |
+| Pull Requests | `gh pr merge` | Merge a pull request | `gh pr merge 5` |
+| Workflow / CI | `gh workflow list` | List GitHub Actions workflows | `gh workflow list` |
+| Workflow / CI | `gh workflow run` | Manually trigger a workflow | `gh workflow run deploy.yml` |
+| Workflow / CI | `gh run list` | List workflow runs | `gh run list` |
+| Workflow / CI | `gh run view` | View workflow run details | `gh run view 123456` |
 
 
