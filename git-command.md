@@ -160,53 +160,44 @@ Reset rewrites history, Revert preserves history
 
 
 
-
-# 📘 Git Commands Reference (Days 22–25) — Table Format
+# 📘 Git Commands Cheat sheet
 
 | Category | Command | Description | When to Use | Example |
 |--------|--------|-------------|------------|---------|
-| **Setup & Config** | `git config --global user.name` | Set Git username | First-time setup | `git config --global user.name "Sana"` |
-| | `git config --global user.email` | Set Git email | First-time setup | `git config --global user.email "sana@mail.com"` |
-| | `git config --list` | View config | Verify settings | `git config --list` |
-| **Basic Workflow** | `git status` | Show repo status | Before/after changes | `git status` |
-| | `git add <file>` | Stage a file | Before commit | `git add file.txt` |
-| | `git add .` | Stage all changes | Multiple files | `git add .` |
-| | `git commit -m` | Save snapshot | After staging | `git commit -m "Add feature"` |
-| | `git log --oneline` | View commit history | Quick history view | `git log --oneline` |
-| | `git diff` | View unstaged changes | Review edits | `git diff` |
-| | `git diff --staged` | View staged changes | Before commit | `git diff --staged` |
-| **Branching** | `git branch` | List branches | Check branches | `git branch` |
-| | `git branch <name>` | Create branch | New feature | `git branch feature-1` |
-| | `git switch <name>` | Switch branch | Change context | `git switch main` |
-| | `git switch -c <name>` | Create + switch | Start work | `git switch -c login` |
-| | `git branch -d <name>` | Delete branch | After merge | `git branch -d login` |
-| **Remote** | `git clone` | Copy remote repo | Start project | `git clone repo-url` |
-| | `git remote -v` | View remotes | Check origin | `git remote -v` |
-| | `git fetch` | Download changes | Sync without merge | `git fetch origin` |
-| | `git pull` | Fetch + merge | Update branch | `git pull origin main` |
-| | `git push` | Upload commits | Share work | `git push origin main` |
-| **Merging & Rebasing** | `git merge <branch>` | Combine branches | Integrate work | `git merge feature-1` |
-| | `git merge --squash` | Squash commits | Clean history | `git merge --squash feature-1` |
-| | `git rebase <branch>` | Replay commits | Linear history | `git rebase main` |
-| | `git rebase -i` | Edit commits | Cleanup before push | `git rebase -i HEAD~3` |
-| **Stash** | `git stash` | Save work temporarily | Switch tasks | `git stash` |
-| | `git stash list` | View stashes | Manage stashes | `git stash list` |
-| | `git stash pop` | Apply + delete stash | Resume work | `git stash pop` |
-| **Cherry-Pick** | `git cherry-pick <hash>` | Apply specific commit | Hotfix | `git cherry-pick a1b2c3` |
-| **Reset** | `git reset --soft` | Undo commit, keep staged | Edit commit | `git reset --soft HEAD~1` |
-| | `git reset --mixed` | Undo commit, unstage | Re-stage changes | `git reset --mixed HEAD~1` |
-| | `git reset --hard` | Delete commit + changes | Discard work ⚠️ | `git reset --hard HEAD~1` |
-| **Revert** | `git revert <hash>` | Safe undo commit | Shared branch | `git revert a1b2c3` |
-| | `git revert --continue` | Finish revert | After conflict | `git revert --continue` |
-| | `git revert --abort` | Cancel revert | Abort operation | `git revert --abort` |
-
----
-
-
-
-~
-~
-~
+| Setup & Config | `git config --global user.name` | Set Git username | First-time setup | `git config --global user.name "Sana"` |
+| Setup & Config | `git config --global user.email` | Set Git email | First-time setup | `git config --global user.email "sana@mail.com"` |
+| Setup & Config | `git config --list` | View Git configuration | Verify settings | `git config --list` |
+| Basic Workflow | `git status` | Show repository status | Check changes | `git status` |
+| Basic Workflow | `git add <file>` | Stage a file | Before commit | `git add file.txt` |
+| Basic Workflow | `git add .` | Stage all changes | Multiple files | `git add .` |
+| Basic Workflow | `git commit -m` | Create a commit | Save snapshot | `git commit -m "Add feature"` |
+| Basic Workflow | `git log --oneline` | View commit history | Quick log view | `git log --oneline` |
+| Basic Workflow | `git diff` | View unstaged changes | Review edits | `git diff` |
+| Basic Workflow | `git diff --staged` | View staged changes | Before commit | `git diff --staged` |
+| Branching | `git branch` | List branches | Check branches | `git branch` |
+| Branching | `git branch <name>` | Create a branch | New feature | `git branch feature-1` |
+| Branching | `git switch <name>` | Switch branch | Change context | `git switch main` |
+| Branching | `git switch -c <name>` | Create and switch branch | Start work | `git switch -c login` |
+| Branching | `git branch -d <name>` | Delete merged branch | Cleanup | `git branch -d login` |
+| Remote | `git clone <url>` | Clone a repository | Start project | `git clone repo-url` |
+| Remote | `git remote -v` | View remotes | Check origin | `git remote -v` |
+| Remote | `git fetch` | Download changes | Sync without merge | `git fetch origin` |
+| Remote | `git pull` | Fetch and merge | Update branch | `git pull origin main` |
+| Remote | `git push` | Push commits | Share work | `git push origin main` |
+| Merging | `git merge <branch>` | Merge a branch | Integrate work | `git merge feature-1` |
+| Merging | `git merge --squash` | Squash commits | Clean history | `git merge --squash feature-1` |
+| Rebasing | `git rebase <branch>` | Replay commits | Linear history | `git rebase main` |
+| Rebasing | `git rebase -i HEAD~3` | Interactive rebase | Cleanup commits | `git rebase -i HEAD~3` |
+| Stash | `git stash` | Save changes temporarily | Switch tasks | `git stash` |
+| Stash | `git stash list` | List stashes | Manage stashes | `git stash list` |
+| Stash | `git stash pop` | Apply and remove stash | Resume work | `git stash pop` |
+| Cherry-Pick | `git cherry-pick <hash>` | Apply specific commit | Hotfix | `git cherry-pick a1b2c3` |
+| Reset | `git reset --soft HEAD~1` | Undo commit, keep staged | Edit commit | `git reset --soft HEAD~1` |
+| Reset | `git reset --mixed HEAD~1` | Undo commit, unstage | Re-stage work | `git reset --mixed HEAD~1` |
+| Reset | `git reset --hard HEAD~1` | Delete commit and changes | Discard work ⚠️ | `git reset --hard HEAD~1` |
+| Revert | `git revert <hash>` | Safe undo commit | Shared branch | `git revert a1b2c3` |
+| Revert | `git revert --continue` | Finish revert | After conflict | `git revert --continue` |
+| Revert | `git revert --abort` | Cancel revert | Abort operation | `git revert --abort` |
 ~
 ~
 ~
