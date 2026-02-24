@@ -177,24 +177,3 @@ Reset rewrites history, Revert preserves history
 | Branching | `git switch <name>` | Switch branch | Change context | `git switch main` |
 | Remote | `git clone <url>` | Clone repository | Start project | `git clone repo-url` |
 | Remote | `git pull` | Fetch and merge | Update branch | `git pull origin main` |
-| Merging | `git merge <branch>` | Merge branch | Integrate work | `git merge feature-1` |
-| Rebase | `git rebase -i HEAD~3` | Interactive rebase | Cleanup commits | `git rebase -i HEAD~3` |
-| Reset | `git reset --mixed HEAD~1` | Undo commit, keep files | Re-stage changes | `git reset --mixed HEAD~1` |
-| Revert | `git revert <hash>` | Safe undo commit | Shared branch | `git revert a1b2c3` |
-
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-
-
