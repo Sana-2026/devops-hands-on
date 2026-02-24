@@ -163,9 +163,9 @@ Reset rewrites history, Revert preserves history
 # 📘 Git Commands Cheat sheet
 
 | Category | Command | Description | When to Use | Example |
-|--------|--------|-------------|------------|---------|
-| Setup & Config | `git config --global user.name` | Set Git username | First-time setup | `git config --global user.name "Sana"` |
-| Setup & Config | `git config --global user.email` | Set Git email | First-time setup | `git config --global user.email "sana@mail.com"` |
+|----------|---------|-------------|-------------|---------|
+| Setup & Config | `git config --global user.name` | Set Git username | First-time setup | `git config --global user.name "YourName"` |
+| Setup & Config | `git config --global user.email` | Set Git email | First-time setup | `git config --global user.email "you@email.com"` |
 | Setup & Config | `git config --list` | View Git configuration | Verify settings | `git config --list` |
 | Basic Workflow | `git status` | Show repository status | Check changes | `git status` |
 | Basic Workflow | `git add <file>` | Stage a file | Before commit | `git add file.txt` |
